@@ -15,6 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { ModeToggle } from "./mode-toggle"
+
  
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -157,7 +158,7 @@ export function UpNavigationMenu() {
         </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <Link href="/docs" legacyBehavior passHref>
+        <Link href="/people" legacyBehavior passHref>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
             Team
           </NavigationMenuLink>

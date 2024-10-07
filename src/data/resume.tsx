@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { Book, CircuitBoard, GraduationCap, HomeIcon, Newspaper, NotebookIcon, SquareUser, User2, User2Icon, UsersRound } from "lucide-react";
 
 export const DATA = {
   name: "Martín Ordonez",
@@ -27,7 +27,12 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/newsevents", icon: Newspaper, label: "News & Events" },
+    { href: "/about-martin", icon: SquareUser, label: "About Martín" },
+    { href: "/research-development", icon: CircuitBoard, label: "Research & Development" },
+    { href: "/publications", icon: Book, label: "Publications" },
+    { href: "/people", icon: UsersRound, label: "Team" },
+    { href: "/courses", icon: GraduationCap, label: "Courses" },
   ],
   contact: {
     email: "hello@example.com",
@@ -38,27 +43,27 @@ export const DATA = {
         url: "https://dub.sh/dillion-github",
         icon: Icons.github,
 
-        navbar: true,
+        navbar: false,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://dub.sh/dillion-linkedin",
         icon: Icons.linkedin,
 
-        navbar: true,
+        navbar: false,
       },
       X: {
         name: "X",
         url: "https://dub.sh/dillion-twitter",
         icon: Icons.x,
 
-        navbar: true,
+        navbar: false,
       },
       Youtube: {
         name: "Youtube",
         url: "https://dub.sh/dillion-youtube",
         icon: Icons.youtube,
-        navbar: true,
+        navbar: false,
       },
       email: {
         name: "Send Email",

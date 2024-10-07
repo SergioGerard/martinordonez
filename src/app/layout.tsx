@@ -7,6 +7,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import BlurFade from "@/components/magicui/blur-fade";
 import { UpNavigationMenu } from "@/components/upnavbar";
+import Navbar from "@/components/navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -66,12 +67,15 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
+          <div className="hidden lg:block">
           <section id="navigationmenu" className="fixed z-50 w-full flex items-start justify-center">
-            <BlurFade delay={BLUR_FADE_DELAY * 3}>
               <UpNavigationMenu />
-            </BlurFade>
           </section>
+          </div>
             {children}
+            <div className="block lg:hidden">
+                <Navbar />
+            </div>
           </TooltipProvider>
         </ThemeProvider>
       </body>

@@ -10,7 +10,6 @@ import Markdown from "react-markdown";
 import { HeroSection } from "@/components/hero-section";
 import CardSection from "@/components/card-section";
 import EmblaInfiniteCarousel from "@/components/carousel-images";
-import ProfileCard from "@/components/profile-card";
 
 
 const BLUR_FADE_DELAY = 0.04;
@@ -58,7 +57,6 @@ export default function Page() {
           <EmblaInfiniteCarousel slides={18} options={{ align: 'start' }} />
         </BlurFade>
       </section>
-      <section className="w-full py-28 bg-background"><ProfileCard /></section>
       <section id="news-section" className="w-full py-28 bg-background">
       <BlurFade delay={BLUR_FADE_DELAY * 15}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
