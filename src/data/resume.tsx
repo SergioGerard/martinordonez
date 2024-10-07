@@ -2,15 +2,15 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "Dillion Verma",
-  initials: "DV",
-  url: "https://dillion.io",
-  location: "San Francisco, CA",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
+  name: "Martín Ordonez",
+  initials: "MO",
+  url: "https://martinordonez.com",
+  location: "Vancouver, Canadá",
+  locationLink: "https://www.google.com/maps/place/Canada",
   description:
     "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
   summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
+    "Dr. Martin Ordonez, Professor, Canada Research Chair, and the Fred Kaiser Chair in Power Conversion and Sustainability at the University of British Columbia, is dedicated to exploring new possibilities in this emerging field. As an advisor, his objectives are to recognize the skills and develop the potential of his graduate students, helping them achieve their professional goals. As a researcher, Dr. Ordonez strives to explore, implement and develop the latest technologies and techniques in power conversion. His enthusiastic approach makes the educational and research process an enjoyable experience.",
   avatarUrl: "/me.png",
   skills: [
     "React",

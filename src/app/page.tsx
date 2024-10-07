@@ -1,50 +1,88 @@
+"use client"
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { HeroSection } from "@/components/hero-section";
+import CardSection from "@/components/card-section";
+import EmblaInfiniteCarousel from "@/components/carousel-images";
+import ProfileCard from "@/components/profile-card";
+
 
 const BLUR_FADE_DELAY = 0.04;
+
+/* SECCION HERO PERO CON FOTO A LA DERECHA
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import HeroImage from "@/components/hero-image";
+
+<section id="hero" className="w-full py-16 flex items-center">
+      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
+        <div className="flex-1 space-y-4 text-center md:text-left mb-8 md:mb-0">
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+          <h2 className="text-xl font-semibold">Hey, I am Martin Ordonez</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 6}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
+            I strive for <span className="text-blue-600">power electronics</span> and renewable energy
+          </h1>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            Learn More
+          </Button>
+          </BlurFade>
+        </div>
+        <HeroImage />
+      </div>
+    </section>*/
 
 export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
-      <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-              />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
-          </div>
-        </div>
+      <section id="hero-section" className="-mt-7 w-full flex items-start justify-center">
+        <HeroSection
+          title="Hey, I am Martin Ordonez"
+          subtitle="I strive for"
+          accent=" power electronics"
+          subtitle2=" and renewable energy"
+          buttonText="Discover More"
+        />
       </section>
-      <section id="about">
+      <section id="img-carousel-section" className="w-full bg-background !-mt-8">
+        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+          <EmblaInfiniteCarousel slides={18} options={{ align: 'start' }} />
+        </BlurFade>
+      </section>
+      <section className="w-full py-28 bg-background"><ProfileCard /></section>
+      <section id="news-section" className="w-full py-28 bg-background">
+      <BlurFade delay={BLUR_FADE_DELAY * 15}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  News & Events
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Check my latest news!
+                </h2>
+                <p className="text-muted-foreground px-8 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Explore my latest projects, achievements, and notable events. Stay informed about my contributions and upcoming activities in sustainable technology.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+      <CardSection />
+      </section>
+      <section id="info">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
+          <h2 className="text-xl font-bold text-center">Renewable Energy Research & Development</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+          <Markdown className=" prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert px-80 py-6">
             {DATA.summary}
           </Markdown>
         </BlurFade>
