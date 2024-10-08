@@ -191,6 +191,7 @@ const ListItem = React.forwardRef<
             className
           )}
           {...props}
+          aria-label={title}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">

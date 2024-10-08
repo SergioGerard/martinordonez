@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import BlurFade from "@/components/magicui/blur-fade";
 import { UpNavigationMenu } from "@/components/upnavbar";
 import Navbar from "@/components/navbar";
 
@@ -49,8 +48,6 @@ export const metadata: Metadata = {
     yandex: "",
   },
 };
-
-const BLUR_FADE_DELAY = 0.04;
 
 export default function RootLayout({
   children,

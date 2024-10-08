@@ -121,8 +121,8 @@ const teamMembers: TeamMember[] = [
 
 function TeamMember({ member }: { member: TeamMember }) {
   return (
-    <Card className="overflow-hidden border py-6 px-6 hover:border-primary">
-      <CardContent className="p-4">
+    <Card className="overflow-hidden border hover:border-primary">
+      <CardContent className="p-6 min-w-[225px]">
         <div className="flex flex-col items-center text-center">
           <Avatar className="h-24 w-24 mb-4">
             <AvatarImage src={member.avatar} alt={member.name} />
