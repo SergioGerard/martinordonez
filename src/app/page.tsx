@@ -10,6 +10,7 @@ import Markdown from "react-markdown";
 import { HeroSection } from "@/components/hero-section";
 import CardSection from "@/components/card-section";
 import EmblaInfiniteCarousel from "@/components/carousel-images";
+import Image from "next/image";
 
 
 const BLUR_FADE_DELAY = 0.04;
@@ -57,7 +58,30 @@ export default function Page() {
           <EmblaInfiniteCarousel slides={18} options={{ align: 'start' }} />
         </BlurFade>
       </section>
-      <section id="news-section" className="w-full py-28 bg-background">
+      <section id="info" className="w-full bg-background py-28">
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-center md:items-start gap-8 mb-16">
+            <div className="w-1/2 md:w-1/5">
+              <Image
+                src="/me.png?height=400&width=600"
+                alt="About Us"
+                width={600}
+                height={400}
+                className="rounded-lg object-cover w-full h-auto"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+            <h2 className="text-foreground text-xl font-bold mb-2">Renewable Energy Research & Development</h2>
+              <p className="text-muted-foreground mb-2">
+              Dr. Martin Ordonez, Professor, Canada Research Chair, and the Fred Kaiser Chair in Power Conversion and Sustainability at the University of British Columbia, is dedicated to exploring new possibilities in this emerging field. As an advisor, his objectives are to recognize the skills and develop the potential of his graduate students, helping them achieve their professional goals. As a researcher, Dr. Ordonez strives to explore, implement and develop the latest technologies and techniques in power conversion. His enthusiastic approach makes the educational and research process an enjoyable experience.
+              </p>
+            </div>
+          </div>
+          </div>
+        </BlurFade>
+      </section>
+      <section id="news-section" className="w-full py-8 bg-background">
       <BlurFade delay={BLUR_FADE_DELAY * 15}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
               <div className="space-y-2">
@@ -74,16 +98,6 @@ export default function Page() {
             </div>
           </BlurFade>
       <CardSection />
-      </section>
-      <section id="info">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold text-center">Renewable Energy Research & Development</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className=" prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert px-80 py-6">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
       </section>
       <section id="projects">
         <div className="space-y-12 w-full py-12">
