@@ -16,9 +16,9 @@ export default function Page() {
       >
         <HeroSection
           title="About"
-          subtitle=""
-          accent="Martín"
-          subtitle2=" Ordonez"
+          subtitle="Dr."
+          accent=" Martin "
+          subtitle2=" Ordonez, Ph.D., P.Eng."
           buttonText="Discover More"
           showButton={false}
         />

@@ -52,17 +52,17 @@ const components: { title: string; href: string; description: string }[] = [
 const publications: { title: string; href: string; description: string }[] = [
   {
     title: "Journals",
-    href: "/journals",
+    href: "/publications/journals",
     description: "Peer-reviewed publications covering original research in my field.",
   },
   {
     title: "Conferences",
-    href: "/conferences",
+    href: "/publications/conferences",
     description: "Papers presented at conferences highlighting my latest advancements and discoveries.",
   },
   {
     title: "Patents",
-    href: "/patents",
+    href: "/publications/patents",
     description: "Patents that protect my innovations and processes in the field of technology.",
   },
 ];
@@ -86,7 +86,14 @@ export function UpNavigationMenu() {
         </Link>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>About</NavigationMenuTrigger>
+        <Link href="/blog" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Blog
+          </NavigationMenuLink>
+        </Link>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuTrigger><a href="/about-martin">About</a></NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
             <li className="row-span-3">
@@ -126,7 +133,8 @@ export function UpNavigationMenu() {
         </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Research & Development</NavigationMenuTrigger>
+      
+        <NavigationMenuTrigger><a href="/research-development">Research & Development</a></NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
             {components.map((component) => (

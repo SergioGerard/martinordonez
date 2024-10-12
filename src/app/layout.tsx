@@ -65,14 +65,14 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
           <div className="hidden lg:block">
-          <section id="navigationmenu" className="fixed z-50 w-full flex items-start justify-center">
-              <UpNavigationMenu />
-          </section>
+            <section id="navigationmenu" className="fixed z-50 w-full flex items-start justify-center">
+                <UpNavigationMenu />
+            </section>
           </div>
-            {children}
-            <div className="block lg:hidden">
-                <Navbar />
-            </div>
+          {children}
+          <div className="block lg:hidden">
+              <Navbar />
+          </div>
           </TooltipProvider>
         </ThemeProvider>
       </body>

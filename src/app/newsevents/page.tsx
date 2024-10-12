@@ -2,6 +2,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import CardSection from "@/components/card-section";
 import { HeroSection } from "@/components/hero-section";
+import BlogPage from "../blog/page";
 
 const BLUR_FADE_DELAY = 0.04;
 

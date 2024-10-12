@@ -1,12 +1,8 @@
 "use client"
-import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
-import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
-import Markdown from "react-markdown";
 import { HeroSection } from "@/components/hero-section";
 import CardSection from "@/components/card-section";
 import EmblaInfiniteCarousel from "@/components/carousel-images";
