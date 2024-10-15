@@ -1,12 +1,11 @@
-"use client"
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import { HeroSection } from "@/components/hero-section";
-import CardSection from "@/components/card-section";
 import EmblaInfiniteCarousel from "@/components/carousel-images";
 import Image from "next/image";
+import BlogPage from "./blog/page";
 
 
 const BLUR_FADE_DELAY = 0.04;
@@ -93,7 +92,7 @@ export default function Page() {
               </div>
             </div>
           </BlurFade>
-      <CardSection />
+        <BlogPage limit={4} />
       </section>
       <section id="projects">
         <div className="space-y-12 w-full py-12">

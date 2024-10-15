@@ -1,6 +1,5 @@
-"use client"
+
 import BlurFade from "@/components/magicui/blur-fade";
-import CardSection from "@/components/card-section";
 import { HeroSection } from "@/components/hero-section";
 import BlogPage from "../blog/page";
 
@@ -20,31 +19,31 @@ export default function Page() {
         />
       </section>
       <section id="news-section" className="w-full bg-background">
-      <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
-              <div className="space-y-2">
-                <div className="flex justify-center gap-4">
-                    <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    News
-                    </div>
-                    <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    Events
-                    </div>
-                    <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    Graduations
-                    </div>
-                    <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    Blog
-                    </div>
-                    <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    Projects
-                    </div>
-                </div>
+        <BlurFade delay={BLUR_FADE_DELAY * 11}>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
+            <div className="space-y-2">
+              <div className="flex justify-center gap-4">
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  News
+                  </div>
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Events
+                  </div>
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Graduations
+                  </div>
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Blog
+                  </div>
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Projects
+                  </div>
               </div>
             </div>
-          </BlurFade>
-      <CardSection />
+          </div>
+        </BlurFade>
+        <BlogPage />
       </section>
-    </main>
+    </main> 
   );
 }

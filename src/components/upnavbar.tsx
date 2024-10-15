@@ -86,13 +86,6 @@ export function UpNavigationMenu() {
         </Link>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <Link href="/blog" legacyBehavior passHref>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            Blog
-          </NavigationMenuLink>
-        </Link>
-      </NavigationMenuItem>
-      <NavigationMenuItem>
         <NavigationMenuTrigger><a href="/about-martin">About</a></NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">

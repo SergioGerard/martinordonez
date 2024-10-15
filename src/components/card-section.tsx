@@ -54,10 +54,10 @@ export default function CardSection() {
                   alt={card.title}
                   width={300}
                   height={200}
-                  className="object-cover w-full h-[200px]"
+                  className="w-full h-48 object-cover rounded-t-lg"
                 />
               </CardHeader>
-              <CardContent className="flex-grow p-6">
+              <CardContent className="p-4">
                 <Badge>{card.badge}</Badge>
                 <CardTitle className="text-base text-foreground mb-2 mt-2">{card.title}</CardTitle>
                 <p className="font-sans text-xs mb-2">{card.date}</p>

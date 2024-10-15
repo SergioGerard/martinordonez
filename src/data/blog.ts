@@ -10,8 +10,9 @@ import { unified } from "unified";
 type Metadata = {
   title: string;
   publishedAt: string;
-  summary: string;
+  description: string;
   image?: string;
+  tags: string[];
 };
 
 function getMDXFiles(dir: string) {
@@ -23,7 +24,6 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
-      // https://rehype-pretty.pages.dev/#usage
       theme: {
         light: "min-light",
         dark: "min-dark",
@@ -38,12 +38,15 @@ export async function markdownToHTML(markdown: string) {
 
 export async function getPost(slug: string) {
   const filePath = path.join("content", `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`The file ${filePath} do not exists`);
+  }
   let source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
   const content = await markdownToHTML(rawContent);
   return {
     source: content,
-    metadata,
+    metadata: metadata as Metadata,
     slug,
   };
 }
