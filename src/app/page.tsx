@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/hero-section";
 import EmblaInfiniteCarousel from "@/components/carousel-images";
 import Image from "next/image";
 import BlogPage from "./blog/page";
+import BlogPosts from "@/components/BlogPosts";
 
 
 const BLUR_FADE_DELAY = 0.04;
@@ -76,7 +77,7 @@ export default function Page() {
           </div>
         </BlurFade>
       </section>
-      <section id="news-section" className="w-full py-8 bg-background">
+      <section id="news-section" className="container px-4 md:px-6 py-12">
       <BlurFade delay={BLUR_FADE_DELAY * 15}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
               <div className="space-y-2">
@@ -92,7 +93,7 @@ export default function Page() {
               </div>
             </div>
           </BlurFade>
-        <BlogPage limit={4} />
+        <BlogPosts limit={4} />
       </section>
       <section id="projects">
         <div className="space-y-12 w-full py-12">
