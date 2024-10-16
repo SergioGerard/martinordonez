@@ -37,7 +37,7 @@ export default async function BlogPosts({ limit }: BlogPostsProps) {
       {displayedPosts.map((post, id) => (
         <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={post.slug}>
           <Link href={`/blog/${post.slug}`}>
-            <Card className="border flex flex-col overflow-hidden transition-colors hover:border-primary">
+            <Card className="h-full border flex flex-col overflow-hidden transition-colors hover:border-primary">
               <CardHeader className="p-0">
                 <Image
                   src={post.metadata.image || "/placeholder.svg"}
@@ -47,26 +47,28 @@ export default async function BlogPosts({ limit }: BlogPostsProps) {
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
               </CardHeader>
-              <CardContent className="p-4">
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {post.metadata.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <CardTitle className="text-base text-foreground mb-2 mt-2">
-                  {post.metadata.title}
-                </CardTitle>
-                <CardDescription className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert line-clamp-3">
-                  {post.metadata.description}
-                </CardDescription>
-              </CardContent>
-              <CardFooter className="p-4 pt-0">
-                <p className="text-xs text-muted-foreground">
-                  {new Date(post.metadata.publishedAt).toLocaleDateString()}
-                </p>
-              </CardFooter>
+              <div className="h-full flex flex-col justify-between">
+                <CardContent className="p-4">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {post.metadata.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <CardTitle className="text-base text-foreground mb-2 mt-2">
+                    {post.metadata.title}
+                  </CardTitle>
+                  <CardDescription className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert line-clamp-3">
+                    {post.metadata.description}
+                  </CardDescription>
+                </CardContent>
+                <CardFooter className="p-4 pt-0">
+                  <p className="text-xs text-muted-foreground">
+                    {new Date(post.metadata.publishedAt).toLocaleDateString()}
+                  </p>
+                </CardFooter>
+              </div>
             </Card>
           </Link>
         </BlurFade>

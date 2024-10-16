@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import BackButton from "@/components/BackButton";
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -65,7 +66,11 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog">
+    <section id="blog" className="flex justify-center w-full py-48">
+      <div>
+        <BackButton />
+      </div>
+      <div className="max-w-5xl">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -102,6 +107,7 @@ export default async function Blog({
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
+      </div>
     </section>
   );
 }

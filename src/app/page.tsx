@@ -5,7 +5,6 @@ import Link from "next/link";
 import { HeroSection } from "@/components/hero-section";
 import EmblaInfiniteCarousel from "@/components/carousel-images";
 import Image from "next/image";
-import BlogPage from "./blog/page";
 import BlogPosts from "@/components/BlogPosts";
 
 
