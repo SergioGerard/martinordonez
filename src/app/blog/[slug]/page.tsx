@@ -66,11 +66,9 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog" className="flex justify-center w-full py-48">
-      <div>
-        <BackButton />
-      </div>
-      <div className="max-w-5xl">
+    <section id="blog" className="flex justify-center w-full py-48 px-8">
+      <BackButton />
+      <div id="article" className="max-w-5xl ml-8">
       <script
         type="application/ld+json"
         suppressHydrationWarning

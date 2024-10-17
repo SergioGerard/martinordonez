@@ -6,6 +6,8 @@ import { HeroSection } from "@/components/hero-section";
 import EmblaInfiniteCarousel from "@/components/carousel-images";
 import Image from "next/image";
 import BlogPosts from "@/components/BlogPosts";
+import CarouselPhone from "@/components/carousel-images-phone";
+import { Carousel } from "@/components/ui/carousel";
 
 
 const BLUR_FADE_DELAY = 0.04;
@@ -50,7 +52,14 @@ export default function Page() {
       </section>
       <section id="img-carousel-section" className="w-full bg-background !-mt-8">
         <BlurFade delay={BLUR_FADE_DELAY * 12}>
-          <EmblaInfiniteCarousel slides={18} options={{ align: 'start' }} />
+          <div className="hidden md:block">
+            <EmblaInfiniteCarousel slides={18} options={{ align: 'start' }} />
+          </div>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+          <div className="block md:hidden">
+            <CarouselPhone />
+          </div>
         </BlurFade>
       </section>
       <section id="info" className="w-full bg-background py-28">

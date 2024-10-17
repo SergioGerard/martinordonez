@@ -6,7 +6,7 @@ export default function BackButton() {
   return (
     <div>
       <Button 
-        className="me-10" 
+        className="" 
         variant="outline" 
         size="icon" 
         onClick={() => window.history.back()}
