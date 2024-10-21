@@ -7,7 +7,6 @@ import EmblaInfiniteCarousel from "@/components/carousel-images";
 import Image from "next/image";
 import BlogPosts from "@/components/BlogPosts";
 import CarouselPhone from "@/components/carousel-images-phone";
-import { Carousel } from "@/components/ui/carousel";
 
 
 const BLUR_FADE_DELAY = 0.04;
