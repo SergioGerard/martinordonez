@@ -2,8 +2,6 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { HeroSection } from "@/components/hero-section";
 import Image from "next/image";
-import { QuoteIcon } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -16,7 +14,7 @@ export default function Page() {
       >
         <HeroSection
           title="About"
-          subtitle="Dr."
+          subtitle=""
           accent=" Susstaingineering "
           subtitle2=" Designing Sustainable Technology for Global Impact"
           buttonText="Discover More"

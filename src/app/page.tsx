@@ -67,7 +67,7 @@ export default function Page() {
           <div className="flex flex-col md:flex-row items-center justify-center md:items-start gap-8 mb-16">
             <div className="w-1/2 md:w-1/5">
               <Image
-                src="/me.png?height=400&width=600"
+                src="/imageabout/me.png?height=400&width=600"
                 alt="About Us"
                 width={600}
                 height={400}

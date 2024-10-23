@@ -15,7 +15,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Martín Ordonez",
     occupation: "Canada Research Chair Professor, UBC",
-    avatar: "/me.png?height=100&width=100",
+    avatar: "/imageabout/me.png?height=100&width=100",
     globe: "https://martinordonez.com",
     linkedin: "https://www.linkedin.com/in/martin-ordonez-70a63a1a/",
     category: "PInvestigator",
