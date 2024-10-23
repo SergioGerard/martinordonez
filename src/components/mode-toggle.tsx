@@ -1,15 +1,15 @@
 "use client";
 
+import { forwardRef } from "react";
 import { Button } from "@/components/ui/button";
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
 
-export function ModeToggle() {
+export const ModeToggle = forwardRef<HTMLButtonElement>((props, ref) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
-    // Establecer el tema predeterminado en el primer renderizado
     if (resolvedTheme) {
       setTheme(resolvedTheme);
     }
@@ -21,6 +21,7 @@ export function ModeToggle() {
 
   return (
     <Button
+      ref={ref}
       variant="ghost"
       type="button"
       size="icon"
@@ -31,4 +32,6 @@ export function ModeToggle() {
       <MoonIcon className="hidden h-[1.2rem] w-[1.2rem] text-neutral-800 dark:block dark:text-neutral-200" />
     </Button>
   );
-}
+});
+
+ModeToggle.displayName = "ModeToggle";
