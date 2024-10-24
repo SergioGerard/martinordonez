@@ -19,7 +19,7 @@ export default function Page() {
         />
       </section>
       <section id="news-section" className="w-full bg-background">
-        <BlurFade delay={BLUR_FADE_DELAY * 11}>
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
             <div className="space-y-2">
               <div className="flex justify-center gap-4">

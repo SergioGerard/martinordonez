@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { Book, CircuitBoard, GraduationCap, HomeIcon, Newspaper, NotebookIcon, SquareUser, User2, User2Icon, UsersRound } from "lucide-react";
+import { Book, CircuitBoard, Contact, GraduationCap, HomeIcon, MessageSquareMore, Newspaper, NotebookIcon, SquareUser, User2, User2Icon, UsersRound } from "lucide-react";
 
 export const DATA = {
   name: "Martín Ordonez",
@@ -33,6 +33,7 @@ export const DATA = {
     { href: "/publications", icon: Book, label: "Publications" },
     { href: "/people", icon: UsersRound, label: "Team" },
     { href: "/courses", icon: GraduationCap, label: "Courses" },
+    { href: "/contact", icon: MessageSquareMore, label: "Contact" },
   ],
   contact: {
     email: "hello@example.com",

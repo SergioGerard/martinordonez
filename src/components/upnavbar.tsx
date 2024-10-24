@@ -19,30 +19,30 @@ import { ModeToggle } from "./mode-toggle"
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Advanced Controllers",
-    href: "/advanced-controllers",
+    href: "/research-development/advanced-controllers",
     description:
       "Digital non-linear control strategies that enable intelligent power conversion.",
   },
   {
     title: "Renewable Energy System",
-    href: "/renewable-energy-systems",
+    href: "/research-development/renewable-energy-systems",
     description:
       "Special power converters and advanced algorithms enable the cost-effective adoption of renewable energy.",
   },
   {
     title: "EV Battery Chargers",
-    href: "/ev-battery-chargers",
+    href: "/research-development/ev-battery-chargers",
     description:
       "High-efficiency ultra compact battery chargers for new generation electric vehicles.",
   },
   {
     title: "Conversion Efficiency",
-    href: "/conversion-efficiency",
+    href: "/research-development/conversion-efficiency",
     description: "Rapid power loss estimation in complex topologies for optimum converter design.",
   },
   {
     title: "Planar Magnetics",
-    href: "/magnetics",
+    href: "/research-development/magnetics",
     description:
       "State-of-the-art advanced magnetics design for complex power converters.",
   },
@@ -126,7 +126,7 @@ export function UpNavigationMenu() {
       </NavigationMenuItem>
       <NavigationMenuItem>
       
-        <NavigationMenuTrigger><a href="/research-development">Research & Development</a></NavigationMenuTrigger>
+        <NavigationMenuTrigger><a href="/research-development/main">Research & Development</a></NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
             {components.map((component) => (
@@ -168,6 +168,13 @@ export function UpNavigationMenu() {
         <Link href="/courses" legacyBehavior passHref>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
             Courses
+          </NavigationMenuLink>
+        </Link>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <Link href="/contact" legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            Contact
           </NavigationMenuLink>
         </Link>
       </NavigationMenuItem>

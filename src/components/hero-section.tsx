@@ -35,13 +35,13 @@ export function HeroSection({ title, subtitle, subtitle2, accent, buttonText, sh
             <BlurFade delay={BLUR_FADE_DELAY * 3}>
               <h2 className="text-xl font-semibold text-center">{title}</h2>
             </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY * 6}>
+            <BlurFade delay={BLUR_FADE_DELAY * 3}>
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-center">
                 {subtitle}<span className="text-blue-600">{accent}</span>{subtitle2}
               </h1>
             </BlurFade>
             {showButton && buttonText && (
-              <BlurFade delay={BLUR_FADE_DELAY * 9}>
+              <BlurFade delay={BLUR_FADE_DELAY * 3}>
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                   {buttonText}
                 </Button>

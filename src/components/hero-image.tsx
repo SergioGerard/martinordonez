@@ -42,7 +42,7 @@ export default function HeroImage() {
           ref={ref}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-        ><BlurFade delay={BLUR_FADE_DELAY * 12}>
+        ><BlurFade delay={BLUR_FADE_DELAY * 3}>
           <motion.div 
             className="w-full max-w-[500px] aspect-square mx-auto relative"
             style={{

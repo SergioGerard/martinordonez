@@ -23,7 +23,7 @@ export default function Page() {
         />
       </section>
       <section id="team-section" className="w-full bg-background !-mt-10">
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <div className="w-full flex items-center justify-center">
           <CardPublications data={journals} />
           </div>

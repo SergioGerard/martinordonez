@@ -50,18 +50,18 @@ export default function Page() {
         />
       </section>
       <section id="img-carousel-section" className="w-full bg-background !-mt-8">
-        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <div className="hidden md:block">
             <EmblaInfiniteCarousel slides={18} options={{ align: 'start' }} />
           </div>
         </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <div className="block md:hidden">
             <CarouselPhone />
           </div>
         </BlurFade>
       </section>
-      <section id="info" className="w-full bg-background py-28">
+      <section id="info" className="w-full bg-background pt-28 pb-8">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center md:items-start gap-8 mb-16">
@@ -84,8 +84,8 @@ export default function Page() {
           </div>
         </BlurFade>
       </section>
-      <section id="news-section" className="container px-4 md:px-6 py-12">
-      <BlurFade delay={BLUR_FADE_DELAY * 15}>
+      <section id="news-section" className="container px-4 md:px-6 py-4">
+      <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
@@ -102,50 +102,9 @@ export default function Page() {
           </BlurFade>
         <BlogPosts limit={4} />
       </section>
-      <section id="projects">
-        <div className="space-y-12 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  My Projects
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
-                </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
-                </p>
-              </div>
-            </div>
-          </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
             <div className="space-y-3">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
                 Contact
