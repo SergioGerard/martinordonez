@@ -142,7 +142,7 @@ export function UpNavigationMenu() {
         </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Publications</NavigationMenuTrigger>
+        <NavigationMenuTrigger><a href="/publications/main">Publications</a></NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
             {publications.map((publication) => (
