@@ -88,8 +88,8 @@ export default function DevelopmentArticle({
                   />
                 </CardHeader>
                 <CardContent>
-                  <CardTitle className="text-2xl font-bold text-center text-foreground">{card.title}</CardTitle>
-                  <CardDescription className="mt-2 text-center text-base text-foreground">
+                  <CardTitle className="text-2xl font-bold text-center text-white">{card.title}</CardTitle>
+                  <CardDescription className="mt-2 text-center text-base text-white">
                     {card.description}
                   </CardDescription>
                 </CardContent>
@@ -108,8 +108,8 @@ export default function DevelopmentArticle({
                 />
               </CardHeader>
               <CardContent>
-                <CardTitle className="text-2xl font-bold text-center text-foreground">{cardData[2].title}</CardTitle>
-                <CardDescription className="mt-2 text-center text-base text-foreground">
+                <CardTitle className="text-2xl font-bold text-center text-white">{cardData[2].title}</CardTitle>
+                <CardDescription className="mt-2 text-center text-base text-white">
                   {cardData[2].description}
                 </CardDescription>
               </CardContent>
