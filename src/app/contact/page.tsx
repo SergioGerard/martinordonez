@@ -104,7 +104,9 @@ export default function Page() {
                     </p>
                   </CardContent>
                   <CardFooter className="flex flex-col items-start space-y-4">
+                  <a href="https://ece.zohorecruit.com/jobs/Careers" target="_blank" rel="noopener noreferrer">
                     <Button className="w-full sm:w-auto">Apply Now</Button>
+                  </a>
                     <p className="text-sm text-muted-foreground">
                       If you also wish to make a formal application to UBC Electrical and Computer Engineering Department, please
                       use the University website.
