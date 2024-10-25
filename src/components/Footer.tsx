@@ -57,19 +57,19 @@ export default function Footer() {
             <h4 className="font-semibold text-primary">Research & Development</h4>
             <ul className="mt-2 space-y-2 text-muted-foreground">
               <li>
-                <a href="/advanced-controllers" className="hover:text-primary transition-colors">Advanced Controllers</a>
+                <a href="/research-development/advanced-controllers" className="hover:text-primary transition-colors">Advanced Controllers</a>
               </li>
               <li>
-                <a href="/renewable-energy-systems" className="hover:text-primary transition-colors">Renewable Energy System</a>
+                <a href="/research-development/renewable-energy-systems" className="hover:text-primary transition-colors">Renewable Energy System</a>
               </li>
               <li>
-                <a href="/ev-battery-chargers" className="hover:text-primary transition-colors">EV Battery Chargers</a>
+                <a href="/research-development/ev-battery-chargers" className="hover:text-primary transition-colors">EV Battery Chargers</a>
               </li>
               <li>
-                <a href="/conversion-efficiency" className="hover:text-primary transition-colors">Conversion Efficiency</a>
+                <a href="/research-development/conversion-efficiency" className="hover:text-primary transition-colors">Conversion Efficiency</a>
               </li>
               <li>
-                <a href="/magnetics" className="hover:text-primary transition-colors">Planar Magnetics</a>
+                <a href="/research-development/magnetics" className="hover:text-primary transition-colors">Planar Magnetics</a>
               </li>
             </ul>
           </div>
@@ -104,7 +104,7 @@ export default function Footer() {
                 <a href="/canada-research-chair" className="hover:text-primary transition-colors">Canada Research Chair</a>
               </li>
               <li>
-                <a href="/sistaingineering" className="hover:text-primary transition-colors">Sustaingineering</a>
+                <a href="/sustaingineering" className="hover:text-primary transition-colors">Sustaingineering</a>
               </li>
               <li>
                 <a href="/ieee-pels-vancouver" className="hover:text-primary transition-colors">IEEE PELS Vancouver</a>
@@ -117,7 +117,7 @@ export default function Footer() {
             <h4 className="font-semibold text-primary flex pe-4">Jobs</h4>
             <ul className="mt-2 space-y-2 text-muted-foreground">
               <li className="flex gap-2">
-                <a href="contact" className="hover:text-primary transition-colors">Recruiting</a><ExternalLink />
+                <a href="/contact#recruiting" className="hover:text-primary transition-colors">Recruiting</a><ExternalLink />
               </li>
             </ul>
           </div>

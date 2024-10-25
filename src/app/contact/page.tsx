@@ -87,7 +87,7 @@ export default function Page() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="sm:w-full md:w-2/3 py-8 px-8">
+                <div id="recruiting" className="sm:w-full md:w-2/3 py-8 px-8">
                   <CardHeader>
                     <CardTitle className="text-2xl font-bold">We're Recruiting</CardTitle>
                   </CardHeader>
