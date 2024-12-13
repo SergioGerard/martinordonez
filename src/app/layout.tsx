@@ -7,7 +7,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { UpNavigationMenu } from "@/components/upnavbar";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -59,7 +59,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-full mx-auto py-8 sm:py-8",
+          "min-h-screen bg-background font-sans antialiased max-w-full mx-auto pt-8 sm:pt-8",
           fontSans.variable
         )}
       >
@@ -75,8 +75,8 @@ export default function RootLayout({
               <Navbar />
           </div>
           </TooltipProvider>
+          <Footer />
         </ThemeProvider>
-        <Footer />
       </body>
     </html>
   );

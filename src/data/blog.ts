@@ -12,7 +12,7 @@ type Metadata = {
   publishedAt: string;
   description: string;
   image?: string;
-  tags: string[];
+  category: string[];
 };
 
 function getMDXFiles(dir: string) {

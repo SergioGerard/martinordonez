@@ -145,3 +145,40 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
 }
 
+img {
+  width: 100%;
+}
+
+.button-1 {
+  @apply px-[30px] py-[12px] lg:py-[14px] min-w-[100px] rounded-[8px] font-[600] text-[20px] lg:text-[20px] xl:min-w-[100px] xl:text-[20px] leading-[15px] cursor-pointer;
+  position: relative;
+  display: inline-block;
+  min-width: 100px;
+  background: #000;
+  color: #fafafa;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #666;
+  transition: width 0.3s ease-out;
+  width: 100%;
+  z-index: 0;
+}
+
+.button-1:hover::before {
+  width: 0%; 
+}
+
+.button-1 span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}

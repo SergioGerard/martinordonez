@@ -50,11 +50,7 @@ export default async function BlogPosts({ limit }: BlogPostsProps) {
               <div className="h-full flex flex-col justify-between">
                 <CardContent className="p-4">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    {post.metadata.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
+                  <Badge>{post.metadata.category}</Badge>
                   </div>
                   <CardTitle className="text-base text-foreground mb-2 mt-2">
                     {post.metadata.title}

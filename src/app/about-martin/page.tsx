@@ -24,7 +24,7 @@ export default function Page() {
         />
       </section>
       <section id="news-section" className="w-full bg-background !-mt-8">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+        <BlurFade delay={BLUR_FADE_DELAY * 13}>
           <div className="flex flex-col items-center justify-center space-y-4 text-center pb-16">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -33,7 +33,7 @@ export default function Page() {
             </div>
           </div>
         </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+        <BlurFade delay={BLUR_FADE_DELAY * 13}>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center md:items-start gap-8 mb-16">
             <div className="w-full md:w-1/3">

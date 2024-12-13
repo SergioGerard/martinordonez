@@ -1,133 +1,109 @@
-import { Linkedin, Youtube, Briefcase, ExternalLink } from "lucide-react";
+"use client";
+import Link from "next/link";
+import React from "react";
+
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  return (
-    <footer className="border-t py-8 mt-16">
-      <div className="container mx-auto flex flex-col gap-y-10">
-        {/* Logo con Redes Sociales */}
-        <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img
-              src="/logomartin-black.svg"
-              alt="Company Logo"
-              className="w-full max-w-md md:max-w-sm lg:max-w-lg dark:hidden"
-            />
-            <div>
-              <img
-                src="/logomartin-white.svg"
-                alt="Company Logo"
-                className="w-full max-w-md md:max-w-sm lg:max-w-lg hidden dark:block"
-              />
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+
+  if (!isAdminRoute) {
+    return (
+      <div className="text-primary py-[80px] px-2 lg:px-[150px] bg-[#000000] mt-[90px]">
+        <div
+          className="pb-[30px]"
+          style={{ borderBottom: "1px solid #C1C7CD" }}
+        >
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:w-1/3 flex lg:justify-start justify-center font-bold">
+            <span className="text-blue-600">Martin Ordonez</span>
+          </h2>
+          <p className="text-xl lg:w-1/3 flex lg:justify-start justify-center text-[#ffffff]">
+            Power Electronics and Renewable Energy
+          </p>
+          <div className="flex text-primary w-[80%] lg:w-1/3 mt-[40px] lg:mt-[0] justify-end lg:justify-center mb-[30px] lg:mt-[0]"></div>
+        </div>
+
+        <div className="flex flex-col items-center lg:flex-row lg:justify-between py-[30px]">
+          <div className="w-[80%] lg:w-1/3 flex flex-col lg:flex-row text-center lg:text-start my-[30px] my:mt-[0]">
+            <div className="lg:pe-[60px]">
+              <div className="flex items-center justify-center lg:justify-start pb-[10px]">
+                <img
+                  src="/university_of_british_columbia.png"
+                  alt="Logo"
+                  className="w-[270px] sm:w-[370px]"
+                />
+              </div>
             </div>
           </div>
+          <div className="w-full lg:w-2/3 flex flex-col lg:flex-row lg:justify-end">
+            <div className="pb-[30px] lg:pb-[0] lg:pe-[60px] w-full lg:w-1/3">
+              <div className="flex items-center justify-center lg:justify-start pb-[10px]">
+                <div className="font-[700] text-[25px] text-[#ffffff]">
+                  Contact
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-center lg:justify-start">
+                  <img
+                    src="/social/mail.svg"
+                    alt="mail icon"
+                    className="w-[20px] me-[10px]"
+                  />
+                  <div className="text-[#EEE]">contact@martinordonez.com</div>
+                </div>
+              </div>
+            </div>
 
-          {/* Redes Sociales */}
-          <div className="flex space-x-4 ps-4">
-            <a
-              href="https://www.youtube.com/c/PowerElectronicsUBC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Youtube className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/martin-ordonez-70a63a1a/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a
-              href="/contact"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              title="Recruiting"
-            >
-              <Briefcase className="h-6 w-6" />
-            </a>
+            <div className="pb-[30px] lg:pb-[0] ">
+              <div className="flex items-center justify-center lg:justify-start pb-[10px]">
+                <div className="font-[700] text-[25px] text-[#ffffff]">
+                  Find me in
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-start gap-3">
+                <Link href="https://www.facebook.com/" target="_blank">
+                  <img
+                    src="/social/facebook.svg"
+                    alt="facebook icon"
+                    className="w-[20px]"
+                  />
+                </Link>
+
+                <Link href="https://www.instagram.com/" target="_blank">
+                  <img
+                    src="/social/instagram.svg"
+                    alt="instagram icon"
+                    className="w-[20px]"
+                  />
+                </Link>
+
+                <Link href="https://www.linkedin.com/" target="_blank">
+                  <img
+                    src="/social/linkedin.svg"
+                    alt="linkedin icon"
+                    className="w-[20px]"
+                  />
+                </Link>
+
+                <Link href="https://www.youtube.com/" target="_blank">
+                  <img
+                    src="/social/youtube.svg"
+                    alt="youtube icon"
+                    className="w-[20px]"
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Navegación de Footer en 4 columnas */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {/* Columna 1 */}
-          <div>
-            <h4 className="font-semibold text-primary">Research & Development</h4>
-            <ul className="mt-2 space-y-2 text-muted-foreground">
-              <li>
-                <a href="/research-development/advanced-controllers" className="hover:text-primary transition-colors">Advanced Controllers</a>
-              </li>
-              <li>
-                <a href="/research-development/renewable-energy-systems" className="hover:text-primary transition-colors">Renewable Energy System</a>
-              </li>
-              <li>
-                <a href="/research-development/ev-battery-chargers" className="hover:text-primary transition-colors">EV Battery Chargers</a>
-              </li>
-              <li>
-                <a href="/research-development/conversion-efficiency" className="hover:text-primary transition-colors">Conversion Efficiency</a>
-              </li>
-              <li>
-                <a href="/research-development/magnetics" className="hover:text-primary transition-colors">Planar Magnetics</a>
-              </li>
-            </ul>
+        <div className="flex flex-col items-center gap-6 lg:flex-row lg:justify-between pt-[30px]">
+          <div className="flex flex-row text-center sm:gap-3">
+            <p className="text-[#999999]">Copyright ©2024 Martin Ordonez</p>
           </div>
-
-          {/* Columna 2 */}
-          <div>
-            <h4 className="font-semibold text-primary">Publications</h4>
-            <ul className="mt-2 space-y-2 text-muted-foreground">
-              <li>
-                <a href="/publications/journals" className="hover:text-primary transition-colors">Journals</a>
-              </li>
-              <li>
-                <a href="/publications/conferences" className="hover:text-primary transition-colors">Conferences</a>
-              </li>
-              <li>
-                <a href="/publications/patents" className="hover:text-primary transition-colors">Patents</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Columna 3 */}
-          <div>
-            <h4 className="font-semibold text-primary">About</h4>
-            <ul className="mt-2 space-y-2 text-muted-foreground">
-              <li>
-                <a href="/about-martin" className="hover:text-primary transition-colors">Martin</a>
-              </li>
-              <li>
-                <a href="/fred-kaiser-chair" className="hover:text-primary transition-colors">Fred Kaiser Chair</a>
-              </li>
-              <li>
-                <a href="/canada-research-chair" className="hover:text-primary transition-colors">Canada Research Chair</a>
-              </li>
-              <li>
-                <a href="/sustaingineering" className="hover:text-primary transition-colors">Sustaingineering</a>
-              </li>
-              <li>
-                <a href="/ieee-pels-vancouver" className="hover:text-primary transition-colors">IEEE PELS Vancouver</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Columna 4 */}
-          <div>
-            <h4 className="font-semibold text-primary flex pe-4">Jobs</h4>
-            <ul className="mt-2 space-y-2 text-muted-foreground">
-              <li className="flex gap-2">
-                <a href="/contact#recruiting" className="hover:text-primary transition-colors">Recruiting</a><ExternalLink />
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div>
-        <p className="text-center text-sm text-muted-foreground mt-10">
-  © {new Date().getFullYear()} Martín Ordonez, All rights reserved. | Power Electronics and Renewable Energy
-</p>
         </div>
       </div>
-    </footer>
-  );
+    );
+  }
 }

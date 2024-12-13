@@ -15,34 +15,36 @@ import {
 } from "@/components/ui/navigation-menu"
 import { ModeToggle } from "./mode-toggle"
 
+import { usePathname } from "next/navigation";
+
  
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Advanced Controllers",
-    href: "/research-development/advanced-controllers",
+    href: "/advanced-controllers",
     description:
       "Digital non-linear control strategies that enable intelligent power conversion.",
   },
   {
     title: "Renewable Energy System",
-    href: "/research-development/renewable-energy-systems",
+    href: "/renewable-energy-systems",
     description:
       "Special power converters and advanced algorithms enable the cost-effective adoption of renewable energy.",
   },
   {
     title: "EV Battery Chargers",
-    href: "/research-development/ev-battery-chargers",
+    href: "/ev-battery-chargers",
     description:
       "High-efficiency ultra compact battery chargers for new generation electric vehicles.",
   },
   {
     title: "Conversion Efficiency",
-    href: "/research-development/conversion-efficiency",
+    href: "/conversion-efficiency",
     description: "Rapid power loss estimation in complex topologies for optimum converter design.",
   },
   {
     title: "Planar Magnetics",
-    href: "/research-development/magnetics",
+    href: "/magnetics",
     description:
       "State-of-the-art advanced magnetics design for complex power converters.",
   },
@@ -67,6 +69,13 @@ const publications: { title: string; href: string; description: string }[] = [
 ];
  
 export function UpNavigationMenu() {
+
+
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+
+
+  if (!isAdminRoute) {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -126,7 +135,7 @@ export function UpNavigationMenu() {
       </NavigationMenuItem>
       <NavigationMenuItem>
       
-        <NavigationMenuTrigger><a href="/research-development/main">Research & Development</a></NavigationMenuTrigger>
+        <NavigationMenuTrigger><a href="/research-development">Research & Development</a></NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
             {components.map((component) => (
@@ -142,7 +151,7 @@ export function UpNavigationMenu() {
         </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger><a href="/publications/main">Publications</a></NavigationMenuTrigger>
+        <NavigationMenuTrigger>Publications</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
             {publications.map((publication) => (
@@ -171,17 +180,13 @@ export function UpNavigationMenu() {
           </NavigationMenuLink>
         </Link>
       </NavigationMenuItem>
-      <NavigationMenuItem>
-        <Link href="/contact" legacyBehavior passHref>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            Contact
-          </NavigationMenuLink>
-        </Link>
-      </NavigationMenuItem>
       <ModeToggle />
       </NavigationMenuList>
     </NavigationMenu>
   )
+
+}
+
 }
  
 const ListItem = React.forwardRef<
