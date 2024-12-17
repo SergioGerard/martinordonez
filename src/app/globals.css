@@ -182,3 +182,15 @@ img {
   z-index: 1;
   transition: color 0.3s ease;
 }
+
+@media (min-width: 768px) {
+.md\:flex {
+  display: flex;
+}
+.md\:ml-8 {
+  margin-left: 2rem;
+}
+.md\:w-\[80\%\] {
+  width: 80%;
+}
+}

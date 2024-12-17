@@ -64,7 +64,7 @@ export default function Page() {
       <section id="info" className="w-full bg-background py-28">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-center md:items-start gap-8 mb-16">
+          <div className="flex flex-col md:flex-row items-center justify-center md:items-start gap-8">
             <div className="w-1/2 md:w-1/5">
               <Image
                 src="/imageabout/me.png?height=400&width=600"
@@ -102,7 +102,10 @@ export default function Page() {
           </BlurFade>
         <BlogPosts limit={4} />
       </section>
-      <section id="projects">
+
+
+
+      {/* <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -142,9 +145,12 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12 mt-16">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">

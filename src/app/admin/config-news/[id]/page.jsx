@@ -56,7 +56,7 @@ export default function Config({ params: { id } }) {
 
   return (
     <section>
-      <div className="flex justify-between bg-[#140f1a]">
+      <div className="flex justify-between ">
         <a
           href="/admin"
           style={{

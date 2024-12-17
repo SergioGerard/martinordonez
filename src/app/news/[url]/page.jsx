@@ -1,4 +1,6 @@
 import { getPostByUrl } from "@/lib/firestore";
+import { notFound } from "next/navigation";
+import BackButton from "@/components/BackButton";
 
 export default async function Noticias({ params }) {
   const { url } = params;
@@ -7,50 +9,48 @@ export default async function Noticias({ params }) {
   try {
     post = await getPostByUrl(url);
   } catch (error) {
-    return <div>Error: {error.message}</div>;
+    notFound();
   }
 
   function convertDriveLinkToDirect(link) {
-    const match = link.match(/[-\w]{25,}/); // Extraer el FILE_ID del enlace
+    const match = link.match(/[-\w]{25,}/);
     if (match) {
       const fileId = match[0];
-      return `https://drive.google.com/thumbnail?sz=w640&id=${fileId}`;
+      return `https://drive.google.com/thumbnail?sz=w1000&id=${fileId}`;
     }
     throw new Error("El enlace proporcionado no es válido.");
   }
-  
+
   return (
-    <>
-      <div
-        className="w-full flex items-center justify-center h-[550px]"
-        style={{
-          backgroundImage: `url(${convertDriveLinkToDirect(post.imagen)})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          zIndex: -1,
-        }}
-      ></div>
-      <main
-        id="home"
-        className="flex flex-col gap-[0] md:gap-[100px] bg-[#140f1a]" 
-        style={{padding:"8em"}}
-      >
-        <div className="flex justify-center">
-          <div className="w-[80%] relative bottom-[200px] md:text-lg rounded-[15px]">
-            <div className="article">
-              <strong className="text-[25px] leading-[30px] sm:text-[30px] sm:leading-[35px]">
-                {post.title}
-              </strong>
-              <br />
-              <br />
-              <strong>{post.date}</strong>
-              <br />
-              <br />
-              <div dangerouslySetInnerHTML={{ __html: post.body }} />
-            </div>
-          </div>
+    <section id="news" className="block md:flex justify-center w-full py-48 px-8">
+      {/* Botón de retroceso */}
+      <BackButton />
+
+      <div id="article" className="max-w-5xl ml-0 md:ml-8">
+        {/* Imagen de cabecera */}
+        <div
+          className="w-full h-[550px] mb-8"
+          style={{
+            backgroundImage: `url(${convertDriveLinkToDirect(post.imagen)})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
+
+        {/* Contenido del artículo */}
+        <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
+          {post.title}
+        </h1>
+        <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            {post.date}
+          </p>
         </div>
-      </main>
-    </>
+        <article
+          className="prose dark:prose-invert"
+          dangerouslySetInnerHTML={{ __html: post.body }}
+        ></article>
+      </div>
+    </section>
   );
 }

@@ -50,7 +50,7 @@ const ConfigNews = ({
   };
 
   return (
-    <section id="add_news" className="w-full py-[60px] bg-[#140f1a]">
+    <section id="add_news" className="w-full py-[60px] ">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.4, delay: 0.5 }}

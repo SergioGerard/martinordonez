@@ -152,7 +152,7 @@ export default function View() {
 
   return (
     <section>
-      <div className="flex justify-between bg-[#140f1a]">
+      <div className="flex justify-between ">
         <div className="flex justify-center p-5">
         </div>
         <button

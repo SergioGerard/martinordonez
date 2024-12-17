@@ -1,7 +1,7 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
 import {
   Card,
   CardContent,
@@ -11,11 +11,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
 import { listPosts } from "@/lib/firestore";
 
-const ViewNews = () => {
+const BlogPostFilter = () => {
   const [posts, setPosts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
     async function fetchPosts() {
@@ -24,6 +24,16 @@ const ViewNews = () => {
     }
     fetchPosts();
   }, []);
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredPosts = selectedCategory
+    ? posts.filter((post) => post.category === selectedCategory)
+    : posts;
+
+  const categories = [...new Set(posts.map((post) => post.category))];
 
   function convertDriveLinkToDirect(link) {
     const match = link.match(/[-\w]{25,}/); // Extraer el FILE_ID del enlace
@@ -36,32 +46,31 @@ const ViewNews = () => {
 
   return (
     <section
-      initial={{ opacity: 0, y: 100 }}
-      transition={{ duration: 0.4, delay: 0.5 }}
-      viewport={{ once: true }}
       id="last-news"
-      className="flex flex-col pt-[3em] items-center w-full  min-h-[100vh]"
+      className="flex flex-col pt-[3em] items-center w-full min-h-[100vh]"
     >
-      <div className="text-start text-primary text-2xl pb-[1em]">
-        <a
-          href="/admin/add-news"
-          style={{
-            margin: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#000",
-            color: "#fff",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-          }}
+      {/* Filtro por categorías */}
+      <div className="flex justify-center mb-[60px]">
+        <button
+          className="mr-2 p-2 inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm"
+          onClick={() => handleCategoryChange("")}
         >
-          Add New
-        </a>
+          All
+        </button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className="mr-2 p-2 inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm"
+            onClick={() => handleCategoryChange(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
 
-      <div className=" w-[80%]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 flex justify-between w-[80%] py-16">
-          {posts.map((post) => (
+      <div className=" w-[80%] flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex justify-between md:w-[80%] py-8">
+          {filteredPosts.map((post) => (
             <Card
               className="border flex flex-col overflow-hidden transition-colors hover:border-primary"
               key={post.id}
@@ -72,37 +81,20 @@ const ViewNews = () => {
                     src={convertDriveLinkToDirect(post.imagen)}
                     alt={
                       post.title && post.title.length > 150
-                        ? `${post.title.substring(0, 150) + "..."}`
+                        ? `${post.title.substring(0, 150)}...`
                         : post.title
                     }
                     width={300}
                     height={200}
                     className="object-cover w-full h-[200px]"
                   />
-                  <a
-                    href={"/admin/config-news/" + `${post.id}`}
-                    style={{
-                      position: "absolute",
-                      top: "0",
-                      right: "0",
-                      margin: "20px",
-                      padding: "10px 20px",
-                      backgroundColor: "#fff",
-                      color: "#000",
-                      border: "1px solid #ddd",
-                      borderRadius: "8px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    Edit
-                  </a>
                 </div>
               </CardHeader>
               <CardContent className="flex-grow p-6">
                 <Badge>{post.category}</Badge>
                 <CardTitle className="text-base text-foreground mb-2 mt-2">
                   {post.title && post.title.length > 150
-                    ? `${post.title.substring(0, 150) + "..."}`
+                    ? `${post.title.substring(0, 150)}...`
                     : post.title}
                 </CardTitle>
                 <p className="font-sans text-xs mb-2">{post.date}</p>
@@ -116,7 +108,7 @@ const ViewNews = () => {
                 <Link
                   className="w-full"
                   variant="outline"
-                  href={"news/" + `${post.url}`}
+                  href={`/news/${post.url}`}
                 >
                   Read More
                 </Link>
@@ -129,4 +121,4 @@ const ViewNews = () => {
   );
 };
 
-export default ViewNews;
+export default BlogPostFilter;

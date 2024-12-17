@@ -7,6 +7,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { UpNavigationMenu } from "@/components/upnavbar";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
               <Navbar />
           </div>
           </TooltipProvider>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
